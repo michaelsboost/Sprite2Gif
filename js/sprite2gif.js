@@ -39,7 +39,7 @@ function imageLoaded() {
     read.classList.add("hide");
     btns.classList.remove("hide");
   } else {
-    alertify.error("Error: Height is greater than the width; Please fix your sprite sheet.");
+    alertify.error("Error: Height is greater than the width; <a href=\"https://ezgif.com/sprite-cutter\" target=\"_blank\">Please fix your sprite sheet</a>.");
     return false;
   }
 };
