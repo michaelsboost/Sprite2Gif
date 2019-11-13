@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sprite2Gif: Sprite2Gif Converter</title>
+    <meta charset="UTF-8">
+    <meta http-quiv="X-UA-Compatible" content="IE=9" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Easily convert your sprite sheet into a GIF animation!">
+    <meta name="author" content="Michael Schwartz">
+<!--
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png">
+-->
+    <link rel="stylesheet" href="libraries/animateCSS/animate.css">
+    <link rel="stylesheet" href="libraries/polyui/polyui.css">
+    <link rel="stylesheet" href="css/polyrise.css">
+    <link rel="stylesheet" href="libraries/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="libraries/alertifyjs/css/alertify.min.css">
+    <link rel="stylesheet" href="libraries/alertifyjs/css/themes/default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+<!--
+    <meta property="og:url"         content="https://michaelsboost.com/Sprite2Gif" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="Sprite2Gif: Sprite2Gif Converter" />
+    <meta property="og:description" content="Easily convert your sprite sheet into a GIF animation!" />
+    <meta property="og:image"       content="https://raw.githubusercontent.com/michaelsboost/Sprite2Gif/gh-pages/header.png" />
+-->
+  </head>
+  <body>
+    <div class="header polyriseblock notgrid w100p h100p" style="display: inline-table; padding: 1em;">
+      <div class="grid h100p">
+        <div class="grid__col--12 nomar h100p">
+          <div class="table">
+            <div class="cell">
+              <div class="panel--centered centered grid__col--12 tc">
+               <div id="showit" class="hide">
+                 <img id="result" class="bounceInUp bounceInUp1s">
+               </div>
+               <div id="showprocess" class="hide">
+                 <svg viewBox="0 0 600 150">
+                   <text y="93.75" x="75" style="line-height:125%;" font-weight="400" font-size="80" font-family="Lato" letter-spacing="0" word-spacing="0" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <tspan>Creating GIF</tspan>
+                    </text>
+                  </svg>
+                </div>
+                <label for="openfile">
+                  <h1 id="read" class="bounceInUp bounceInUp1s blacktxt pointer">
+                    <i class="fa fa-upload"></i>
+                  </h1>
+                </label>
+                <h2 id="scripttxt" class="bounceInUp bounceInUp1s blacktxt hide" style="font-size: 32px;">
+                 Interval (seconds before next frame): <input id="animRate" type="number" step="0.01" min="0.01" value="0.04" style="background: none; width: 150px; display: inline; padding: 0 0 0 15px; text-align: center;">
+                </h2>
+                <p id="btns" class="hide" style="text-align: center;">
+                  <a id="createsequence" class="btn--blue bounceInUp bounceInUp1s pointer w100p">
+                    Create Image Sequence
+                  </a>
+                  <a id="creategif" class="hide btn--blue bounceInUp bounceInUp1s pointer w100p">
+                    Create Gif
+                  </a>
+                  <a id="exportgif" class="hide btn--success bounceInUp bounceInUp1s pointer w100p" download="download">
+                    Export Gif
+                  </a>
+                </p>
+                
+                <div id="imgframes" class="bounceInUp bounceInUp1s"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="dropflash" class="hide"></div>
+    
+    <!-- hold sprite sheet -->
+    <div class="hide">
+      <img id="sprite">
+    </div>
+    
+    <!-- canvas -->
+    <div class="hide">
+      <canvas id="canvas"></canvas>
+    </div>
+    
+    <!-- readsvg -->
+    <div class="hide">
+      <input id="openfile" type="file" accept="image/png,image/x-png,image/jpeg,image/bmp,image/tiff">
+    </div>
+    
+    <script src="libraries/alertifyjs/alertify.min.js"></script>
+    <script src="libraries/jquery/jquery.js"></script>
+    <script src="libraries/gifshot/gifshot.min.js"></script>
+    <script src="js/sprite2gif.js"></script>
+  </body>
+</html>
